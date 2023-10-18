@@ -58,10 +58,10 @@ def show_city(city_id):
 
     data = response.json()
 
-    bring_umbrella = False
+    bring_umbrella = "You don't have to take an umbrella"
     for i in range(8):
         if data["list"][i]["weather"][0]["id"] < 700:
-            bring_umbrella = True
+            bring_umbrella = "Bring an umbrella"
 
     return render_template("weather.html", city_name=city_name, umbrela=bring_umbrella)
 
